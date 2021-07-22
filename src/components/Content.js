@@ -5,14 +5,17 @@ import Modal from './Modal'
 import Users from './Users'
 function Content() {
     const loading = useSelector(state => state.users.loading)
-    
+
     return (
-        <div className="content">
-            {loading ? 'идет загрузка ' : <Users />}
+        <div>
+            <div className="content">
+                {loading ? 'идет загрузка ' : <Users />}
+            </div>
             <Route path="/:id">
                 <Modal />
             </Route>
         </div>
+
     )
 }
 
